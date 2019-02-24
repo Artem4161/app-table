@@ -24,29 +24,30 @@
 export default {
 	props: {
 		titles: {
-	      type: Object,
-	      required: true
+	        type: Object,
+	        required: true
 	    },
 	    sortParam: {
-	      type: String,
-	      required: false
+	        type: String,
+	        required: false
 	    },
 	    sortParamDir: {
-	      type: String,
-	      required: false
+	        type: String,
+	        required: false
 	    }
 	},
 	methods: {
 		onChange(title) {    
 			this.$emit('change', {
-				title: title
+				title: title,
+				page: 1
 			});
 		}
 	}
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 
 .table__caption
 	font-size: 14px
@@ -93,6 +94,5 @@ export default {
 	        transform: rotate(-90deg)
 	        fill: rgba(0,0,0,1)
 	        opacity: 1
-
 
 </style>

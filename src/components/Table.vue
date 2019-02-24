@@ -20,6 +20,7 @@
 	    	v-if="!hidePagination"
 	        :currentPage="currentPage"
 	        :totalItems="totalItems"
+	        :perPage="currentPerPage"
 	        @changedPage="onChangedPage"  
 	        @changedPerPage="onChangedPerPage">  
 	    </app-pagination>
@@ -34,12 +35,16 @@ import AppPagination from './Pagination.vue';
 export default {
 	props: {
 		titles: {
-	      type: Object,
-	      required: true
+	        type: Object,
+	        required: true
 	    },
 	    items: {
-	      type: Array,
-	      required: true
+	        type: Array,
+	        required: true
+	    },
+	    perPage: {
+	    	type: Number,
+	    	default: 10
 	    }
 	},
 	components: {
@@ -50,7 +55,7 @@ export default {
 	data() {
 		return {
 			currentPage: 1,
-            perPage: 8,
+            currentPerPage: this.perPage,
 			sortParam: '',
 			sortParamDir: ''
 		}
@@ -63,17 +68,18 @@ export default {
         	return this.items.slice(this.showFromto, this.showUpto);
         },
         showFromto() {
-            return this.perPage != 1 ? (this.currentPage * this.perPage) - this.perPage : 0;
+            return this.currentPerPage != 1 ? (this.currentPage * this.currentPerPage) - this.currentPerPage : 0;
         },
         showUpto() {
-            return this.currentPage * this.perPage;
+            return this.currentPage * this.currentPerPage;
         },
         hidePagination() {
-        	return this.showItems.length < this.perPage && this.currentPage == 1;
+        	return this.showItems.length < this.currentPerPage && this.currentPage == 1;
         }
 	},
 	methods: {
-		onSort({title}) {
+		onSort({title, page}) {
+			this.currentPage = page;
 			this.sortParam = title.toLowerCase();
 			this.sortParamDir = this.sortParamDir == 'asc' ? 'desc' : 'asc';
 
@@ -95,14 +101,15 @@ export default {
 		onChangedPage(page) {
             this.currentPage = page;
         },
-        onChangedPerPage(perPage) {
-        	this.perPage = perPage;
+        onChangedPerPage({perPage, page}) {
+        	this.currentPerPage = Number(perPage);
+        	this.currentPage = page;
         }
 	}
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 
 .table
     font-size: 14px

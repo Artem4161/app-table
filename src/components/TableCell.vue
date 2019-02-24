@@ -1,6 +1,6 @@
 <template>
 	<td class="table__cell"> 
-		<form class="table__cell-wrap">
+		<div class="table__cell-wrap">
 			<span class="table__input-wrap">
 				<input class="table__input table__input--hoshi" type="text" 
 					:value="item"
@@ -21,7 +21,7 @@
 					</svg>
 				</span>
 			</span>
-		</form>
+		</div>
 	</td>
 </template>
 
@@ -37,7 +37,7 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 
 .table__cell
 	position: relative
@@ -73,7 +73,7 @@ export default {
 	font-family: 'robotolight'
 	color: #000
 	font-size: 14px
-	width: 100%
+	width: calc(100% - 18px)
 	height: 14px
 	padding: 4px 0
 	border: none

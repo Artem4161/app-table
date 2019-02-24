@@ -1,6 +1,6 @@
 <template>
-	<form class="search">
-		<span class="search-wrap">
+	<form class="search-wrap">
+		<span class="search">
 			<input class="search__input input__field input__field--hoshi" 
                 type="text" 
                 placeholder="Search"
@@ -27,13 +27,14 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 
-.search
-	position: relative
-	padding: 15px 30px
-	background: #fff
-
+.search-wrap
+    display: inline-block
+    position: relative
+    padding: 15px 30px
+    background: #fff
+    
 .search__input
 	width: 200px
 	padding: 15px 15px 15px 28px
@@ -52,7 +53,7 @@ export default {
 	fill: rgba(0,0,0,.4)
 	padding: 0
 
-.search-wrap
+.search
 	position: relative
     z-index: 1
     display: inline-block

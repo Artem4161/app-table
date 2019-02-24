@@ -1,34 +1,25 @@
 <template>
     <div id="app">
         <div class="container">
-            <div class="content">
-                <app-search
-                    @search="onSearch($event)">   
-                </app-search>
-                <app-table
-                    v-show="filteredData.length"
-                    :titles="titles"
-                    :items="filteredData"
-                    @change="onChange">
-                </app-table>
-                <app-no-result
-                    v-show="!filteredData.length">
-                </app-no-result>
-            </div>
+            <app-data-table
+                :titles="titles"
+                :items="items"
+                :perPage="10">
+            </app-data-table>
         </div> 
     </div>
 </template>
 
 <script>
-import AppSearch from './components/Search.vue';
-import AppTable from './components/Table.vue';
-import AppNoResult from './components/NoResult.vue';
+import AppDataTable from './components/DataTable.vue';
+
 
 export default {
+    components: {
+        AppDataTable
+    },
     data() {
         return {
-            search: '',
-            filteredData: [],
             dataTable: {
                 "titles": {
                 "name": "Name",
@@ -316,11 +307,6 @@ export default {
             }
         }
     },
-    components: {
-        AppSearch,
-        AppTable,
-        AppNoResult
-    },
     computed: {
         titles() {
             return this.dataTable.titles;
@@ -328,39 +314,6 @@ export default {
         items() {
             return this.dataTable.items;
         }   
-    },
-    methods: {
-        onSearch(e) {
-            this.search = e.value;
-            this.getfilteredData();
-        },
-        getfilteredData() {
-            this.filteredData = this.items;
-            let search = this.search.toLowerCase();
-            let filteredDataBySearch = [];
-
-            if (search != '') {
-                filteredDataBySearch = this.filteredData.filter(item => {
-                    let filter =
-                        String(item.name).toLowerCase().indexOf(search) > -1 || 
-                        String(item.height).toLowerCase().indexOf(search) > -1 ||
-                        String(item.mass).toLowerCase().indexOf(search) > -1 ||
-                        String(item.hair_color).toLowerCase().indexOf(search) > -1 ||
-                        String(item.skin_color).toLowerCase().indexOf(search) > -1 ||
-                        String(item.eye_color).toLowerCase().indexOf(search) > -1 ||
-                        String(item.birth_year).toLowerCase().indexOf(search) > -1 || 
-                        String(item.gender).toLowerCase().indexOf(search) > -1
-                    return filter;
-                });
-                this.filteredData = filteredDataBySearch;
-            }
-        },
-        onChange({indexRow, indexCell, value}) {
-            this.dataTable.items[indexRow][indexCell] = value;
-        }
-    },
-    mounted() {
-        this.getfilteredData();
     }
 };
 </script>
