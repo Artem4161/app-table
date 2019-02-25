@@ -147,10 +147,10 @@ export default {
 .checkbox
 	position: absolute
 	top: 18px
-	left: 15px
-	width: 15px
-	height: 15px
-	opacity: .0
+	left: 20px
+	width: 18px
+	height: 18px
+	opacity: 0
 	cursor: pointer
 
 .checkbox-span
