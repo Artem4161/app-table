@@ -90,12 +90,16 @@ export default {
         },
         getSelectedRows(rows) {
             this.selectedRows = rows;
-        },
-        // удалять объекты из массива по index - не правильно, но так как в параметрах нет id, то решил сделать так 
+        }, 
         onRemove() {
-            this.selectedRows.forEach((item, index) => {
-                this.currentItems.splice(this.selectedRows[index] - index, 1);
-            })
+            for(var i = 0; i < this.currentItems.length; i++) {
+                var obj = this.currentItems[i];
+
+                if(this.selectedRows.indexOf(obj.name) !== -1) {
+                    this.currentItems.splice(i, 1);
+                    i--;
+                }
+            }
 
             this.selectedRows = [];
         }

@@ -14,7 +14,7 @@
 	            <td class="table__cell">
 	            	<input type="checkbox"
 	            	class="checkbox" 
-	            		:value="indexRow"
+	            		:value="row.name"
 	            		v-model="currentSelectedRows"
 	            		@change="onSelect">
 	            	<span class="checkbox-span"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" enable-background="new 0 0 26 26">
