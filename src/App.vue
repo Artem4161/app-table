@@ -32,6 +32,7 @@ export default {
                 "gender": "Gender"
                 },
                 "items": [{
+                "id": 1,
                 "name": "Luke Skywalker",
                 "height": 172,
                 "mass": 77,
@@ -41,6 +42,7 @@ export default {
                 "birth_year": "19BBY",
                 "gender": "male",
                 }, {
+                "id": 2,
                 "name": "C-3PO",
                 "height": 167,
                 "mass": 75,
@@ -50,6 +52,7 @@ export default {
                 "birth_year": "112BBY",
                 "gender": "n/a",
                 }, {
+                "id": 3,
                 "name": "R2-D2",
                 "height": 96,
                 "mass": 32,
@@ -59,6 +62,7 @@ export default {
                 "birth_year": "33BBY",
                 "gender": "n/a",
                 }, {
+                "id": 4,
                 "name": "Darth Vader",
                 "height": 202,
                 "mass": 136,
@@ -68,6 +72,7 @@ export default {
                 "birth_year": "41.9BBY",
                 "gender": "male",
                 }, {
+                "id": 5,
                 "name": "Leia Organa",
                 "height": 150,
                 "mass": 49,
@@ -77,6 +82,7 @@ export default {
                 "birth_year": "19BBY",
                 "gender": "female",
                 }, {
+                "id": 6,
                 "name": "Owen Lars",
                 "height": 178,
                 "mass": 120,
@@ -86,6 +92,7 @@ export default {
                 "birth_year": "52BBY",
                 "gender": "male",
                 }, {
+                "id": 7,
                 "name": "Beru Whitesun lars",
                 "height": 165,
                 "mass": 75,
@@ -95,6 +102,7 @@ export default {
                 "birth_year": "47BBY",
                 "gender": "female",
                 }, {
+                "id": 8,
                 "name": "R5-D4",
                 "height": 97,
                 "mass": 32,
@@ -104,6 +112,7 @@ export default {
                 "birth_year": "unknown",
                 "gender": "n/a",
                 }, {
+                "id": 9,
                 "name": "Biggs Darklighter",
                 "height": 183,
                 "mass": 84,
@@ -113,6 +122,7 @@ export default {
                 "birth_year": "24BBY",
                 "gender": "male",
                 }, {
+                "id": 10,
                 "name": "Obi-Wan Kenobi",
                 "height": 182,
                 "mass": 77,
@@ -122,7 +132,7 @@ export default {
                 "birth_year": "57BBY",
                 "gender": "male",
                 }, {
-
+                "id": 11,
                 "name": "Anakin Skywalker",
                 "height": 188,
                 "mass": 84,
@@ -132,6 +142,7 @@ export default {
                 "birth_year": "41.9BBY",
                 "gender": "male",
                 }, {
+                "id": 12,
                 "name": "Wilhuff Tarkin",
                 "height": 180,
                 "mass": "unknown",
@@ -141,6 +152,7 @@ export default {
                 "birth_year": "64BBY",
                 "gender": "male",
                 }, {
+                "id": 13,
                 "name": "Chewbacca",
                 "height": 228,
                 "mass": 112,
@@ -150,6 +162,7 @@ export default {
                 "birth_year": "200BBY",
                 "gender": "male",
                 }, {
+                "id": 14,
                 "name": "Han Solo",
                 "height": 180,
                 "mass": 80,
@@ -159,6 +172,7 @@ export default {
                 "birth_year": "29BBY",
                 "gender": "male",
                 }, {
+                "id": 15,
                 "name": "Greedo",
                 "height": 173,
                 "mass": 74,
@@ -166,9 +180,9 @@ export default {
                 "skin_color": "green",
                 "eye_color": "black",
                 "birth_year": "44BBY",
-
                 "gender": "male",
                 }, {
+                "id": 16,
                 "name": "Jabba Desilijic Tiure",
                 "height": 175,
                 "mass": 1.358,
@@ -178,6 +192,7 @@ export default {
                 "birth_year": "600BBY",
                 "gender": "hermaphrodite",
                 }, {
+                "id": 17,
                 "name": "Wedge Antilles",
                 "height": 170,
                 "mass": 77,
@@ -187,6 +202,7 @@ export default {
                 "birth_year": "21BBY",
                 "gender": "male",
                 }, {
+                "id": 18,
                 "name": "Jek Tono Porkins",
                 "height": 180,
                 "mass": 110,
@@ -196,6 +212,7 @@ export default {
                 "birth_year": "unknown",
                 "gender": "male",
                 }, {
+                "id": 19,
                 "name": "Yoda",
                 "height": 66,
                 "mass": 17,
@@ -205,6 +222,7 @@ export default {
                 "birth_year": "896BBY",
                 "gender": "male",
                 }, {
+                "id": 20,
                 "name": "Palpatine",
                 "height": 170,
                 "mass": 75,
@@ -214,6 +232,7 @@ export default {
                 "birth_year": "82BBY",
                 "gender": "male",
                 }, {
+                "id": 21,
                 "name": "Boba Fett",
                 "height": 183,
                 "mass": 78.2,
@@ -223,6 +242,7 @@ export default {
                 "birth_year": "31.5BBY",
                 "gender": "male",
                 }, {
+                "id": 22,
                 "name": "IG-88",
                 "height": 200,
                 "mass": 140,
@@ -232,6 +252,7 @@ export default {
                 "birth_year": "15BBY",
                 "gender": "none",
                 }, {
+                "id": 23,
                 "name": "Bossk",
                 "height": 190,
                 "mass": 113,
@@ -241,6 +262,7 @@ export default {
                 "birth_year": "53BBY",
                 "gender": "male",
                 }, {
+                "id": 24,
                 "name": "Lando Calrissian",
                 "height": 177,
                 "mass": 79,
@@ -250,6 +272,7 @@ export default {
                 "birth_year": "31BBY",
                 "gender": "male",
                 }, {
+                "id": 25,
                 "name": "Lobot",
                 "height": 175,
                 "mass": 79,
@@ -259,6 +282,7 @@ export default {
                 "birth_year": "37BBY",
                 "gender": "male",
                 }, {
+                "id": 26,
                 "name": "Ackbar",
                 "height": 180,
                 "mass": 83,
@@ -268,6 +292,7 @@ export default {
                 "birth_year": "41BBY",
                 "gender": "male",
                 }, {
+                "id": 27,
                 "name": "Mon Mothma",
                 "height": 150,
                 "mass": "unknown",
@@ -277,6 +302,7 @@ export default {
                 "birth_year": "48BBY",
                 "gender": "female",
                 }, {
+                "id": 28,
                 "name": "Arvel Crynyd",
                 "height": "unknown",
                 "mass": "unknown",
@@ -286,6 +312,7 @@ export default {
                 "birth_year": "unknown",
                 "gender": "male",
                 }, {
+                "id": 29,
                 "name": "Wicket Systri Warrick",
                 "height": 88,
                 "mass": 20,
@@ -295,6 +322,7 @@ export default {
                 "birth_year": "8BBY",
                 "gender": "male",
                 }, {
+                "id": 30,
                 "name": "Nien Nunb",
                 "height": 160,
                 "mass": 68,

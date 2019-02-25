@@ -95,7 +95,7 @@ export default {
             for(var i = 0; i < this.currentItems.length; i++) {
                 var obj = this.currentItems[i];
 
-                if(this.selectedRows.indexOf(obj.name) !== -1) {
+                if(this.selectedRows.indexOf(obj.id) !== -1) {
                     this.currentItems.splice(i, 1);
                     i--;
                 }

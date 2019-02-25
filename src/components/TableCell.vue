@@ -1,5 +1,5 @@
 <template>
-	<td class="table__cell"> 
+	<td v-if="indexCell !== 'id'" class="table__cell">
 		<div class="table__cell-wrap">
 			<span class="table__input-wrap">
 				<input class="table__input table__input--hoshi" type="text" 
@@ -28,7 +28,7 @@
 <script>
 
 export default {
-	props: ['item'], 
+	props: ['item', 'indexCell'], 
 	methods: {
 		onInput(e) {
 			this.$emit('change', e.target.value);
