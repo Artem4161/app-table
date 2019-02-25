@@ -3,13 +3,25 @@
 		<app-search
 	        @search="onSearch($event)">   
 	    </app-search>
-	    <app-table
+        
+        <transition name="fade">
+            <app-selected-items
+                v-show="selectedRowsLength"
+                :selectedItems="selectedRowsLength"
+                @remove="onRemove">
+            </app-selected-items>
+        </transition>
+
+ 	    <app-table
 	        v-show="filteredData.length"
 	        :titles="titles"
 	        :items="filteredData"
             :perPage="perPage"
-	        @change="onChange">
+            :selectedRows="selectedRows"
+	        @change="onChange"
+            @select="getSelectedRows">
 	    </app-table>
+
 	    <app-no-result
 	        v-show="!filteredData.length">
 	    </app-no-result>
@@ -18,6 +30,7 @@
 
 <script>
 import AppSearch from './Search.vue';
+import AppSelectedItems from './SelectedItems.vue';
 import AppTable from './Table.vue';
 import AppNoResult from './NoResult.vue';
 
@@ -38,6 +51,7 @@ export default {
 	},
 	components: {
         AppSearch,
+        AppSelectedItems,
         AppTable,
         AppNoResult
     },
@@ -45,8 +59,14 @@ export default {
     	return {
     		currentItems: this.items,
     		search: '',
-    		filteredData: []
+    		filteredData: [],
+            selectedRows: []
     	}
+    },
+    computed: {
+        selectedRowsLength() {
+            return this.selectedRows.length;
+        }
     },
     methods: {
         onSearch(e) {
@@ -67,6 +87,17 @@ export default {
         },
         onChange({indexRow, indexCell, value}) {
             this.currentItems[indexRow][indexCell] = value;
+        },
+        getSelectedRows(rows) {
+            this.selectedRows = rows;
+        },
+        // удалять объекты из массива по index - не правильно, но так как в параметрах нет id, то решил сделать так 
+        onRemove() {
+            this.selectedRows.forEach((item, index) => {
+                this.currentItems.splice(this.selectedRows[index] - index, 1);
+            })
+
+            this.selectedRows = [];
         }
     },
     mounted() {

@@ -42,14 +42,17 @@ export default {
 .table__cell
 	position: relative
 	font-size: 14px
-	padding: 15px
+	padding: 15px 10px
+	vertical-align: middle
+
+.table__cell:nth-child(2)
+	min-width: 200px
 
 .table__cell:first-child
-	min-width: 200px
-	padding: 15px 15px 15px 30px
+	padding: 15px 10px 15px 20px
 
 .table__cell:last-child
-	padding: 15px 30px 15px 15px
+	padding: 15px 20px 15px 10px
 
 .table__cell-wrap
 	position: relative

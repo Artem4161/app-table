@@ -1,5 +1,6 @@
 <template>
 	<tr>
+		<th></th>
 		<th v-for="(title, key) in titles"
 			:key="key"
 			class="table__caption"
@@ -56,8 +57,8 @@ export default {
 	text-align: left
 	border-bottom: solid 1px #e0e0e0
 
-.table__caption:first-child
-	padding: 15px 15px 15px 30px
+.table__caption:nth-child(2)
+	// padding: 15px 15px 15px 30px
 
 .table__caption:hover
 	.table__caption-wrap
